@@ -1,0 +1,53 @@
+{
+  "description": "Uyum Login Add In v1.0",
+  "manifest_version": 2,
+  "name": "Uyum Login",
+  "version": "1.0",
+  "homepage_url": "https://github.com/an80x86/uyumlogin",
+  "icons": {
+    "16": "icons/icon-16.png",
+    "32": "icons/icon-32.png",
+    "48": "icons/icon-48.png"
+  },
+
+  "content_scripts": [
+    {
+      "matches": [ "*://*.iskur.gov.tr/*", "*://*.gib.gov.tr/*", "*://*.sgk.gov.tr/*", "*://*.turkiye.gov.tr/*" ],
+      "js": [ "uyumlogin.js" ]
+    }
+  ],
+
+  "browser_action": {
+    "default_icon": {
+      "16": "icons/icon-16.png",
+      "32": "icons/icon-32.png",
+      "48": "icons/icon-48.png"
+    }
+  },
+
+  "background": {
+    "scripts": [ "background.js" ]
+  },
+
+  "web_accessible_resources": [
+    "beasts/*.jpg"
+  ],
+
+  "permissions": [
+    "menus",
+    "activeTab",
+    "storage",
+    "cookies",
+    "webNavigation",
+    "contextMenus",
+    "tabs",
+    "*://dev.to/*/*",
+    "*://localhost/*",
+    "*://127.0.0.1/*",
+    "*://getpocket.com/*",
+    "*://*.iskur.gov.tr/*",
+    "*://*.gib.gov.tr/*",
+    "*://*.sgk.gov.tr/*",
+    "*://*.turkiye.gov.tr/*"
+  ]
+}
